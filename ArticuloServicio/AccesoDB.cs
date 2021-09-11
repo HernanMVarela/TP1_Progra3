@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace ArticuloServicio
+namespace Servicio
 {
     public class AccesoDB
     {
@@ -23,7 +23,7 @@ namespace ArticuloServicio
             conexion = new SqlConnection("server=.\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true;");
             comando = new SqlCommand();
         }
-
+        
         public void SetearComando(string consulta)
         {
             comando.CommandType = System.Data.CommandType.Text;
