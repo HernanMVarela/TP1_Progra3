@@ -36,5 +36,11 @@ namespace ArticuloServicio
             conexion.Open();
             lector = comando.ExecuteReader();
         }
+
+        public void CerrarConexion()
+        {
+            if (lector != null) lector.Close();
+            conexion.Close();
+        }
     }
 }

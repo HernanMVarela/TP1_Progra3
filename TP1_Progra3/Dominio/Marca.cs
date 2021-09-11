@@ -8,6 +8,7 @@ namespace Dominio
 {
     public class Marca
     {
-
+        public string Nombre
+        { get; set; }
     }
 }
