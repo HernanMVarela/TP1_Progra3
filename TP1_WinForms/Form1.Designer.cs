@@ -40,6 +40,8 @@ namespace TP1_WinForms
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCatalogo = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).BeginInit();
             this.SuspendLayout();
@@ -56,9 +58,9 @@ namespace TP1_WinForms
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(135, 615);
+            this.btnModificar.Location = new System.Drawing.Point(189, 615);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(198, 46);
+            this.btnModificar.Size = new System.Drawing.Size(129, 46);
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -80,9 +82,8 @@ namespace TP1_WinForms
             this.lblTitulo.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(610, 82);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(78, 28);
+            this.lblTitulo.Size = new System.Drawing.Size(0, 28);
             this.lblTitulo.TabIndex = 3;
-            this.lblTitulo.Text = "label1";
             // 
             // pbxFoto
             // 
@@ -99,9 +100,8 @@ namespace TP1_WinForms
             this.lblDescripcion.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.Location = new System.Drawing.Point(611, 494);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(51, 19);
+            this.lblDescripcion.Size = new System.Drawing.Size(0, 19);
             this.lblDescripcion.TabIndex = 5;
-            this.lblDescripcion.Text = "label1";
             // 
             // lblMarca
             // 
@@ -109,9 +109,8 @@ namespace TP1_WinForms
             this.lblMarca.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.Location = new System.Drawing.Point(611, 532);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(51, 19);
+            this.lblMarca.Size = new System.Drawing.Size(0, 19);
             this.lblMarca.TabIndex = 6;
-            this.lblMarca.Text = "label1";
             // 
             // lblCategoria
             // 
@@ -119,9 +118,8 @@ namespace TP1_WinForms
             this.lblCategoria.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.Location = new System.Drawing.Point(815, 532);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(51, 19);
+            this.lblCategoria.Size = new System.Drawing.Size(0, 19);
             this.lblCategoria.TabIndex = 7;
-            this.lblCategoria.Text = "label1";
             // 
             // lblCodigo
             // 
@@ -129,9 +127,8 @@ namespace TP1_WinForms
             this.lblCodigo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.Location = new System.Drawing.Point(611, 129);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(51, 19);
+            this.lblCodigo.Size = new System.Drawing.Size(0, 19);
             this.lblCodigo.TabIndex = 8;
-            this.lblCodigo.Text = "label1";
             // 
             // lblPrecio
             // 
@@ -139,9 +136,8 @@ namespace TP1_WinForms
             this.lblPrecio.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.Location = new System.Drawing.Point(609, 576);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(78, 28);
+            this.lblPrecio.Size = new System.Drawing.Size(0, 28);
             this.lblPrecio.TabIndex = 9;
-            this.lblPrecio.Text = "label1";
             // 
             // lblCatalogo
             // 
@@ -153,11 +149,31 @@ namespace TP1_WinForms
             this.lblCatalogo.TabIndex = 10;
             this.lblCatalogo.Text = "CATALOGO DE ARTICULOS";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(33, 615);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(129, 46);
+            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(343, 615);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(129, 46);
+            this.btnBorrar.TabIndex = 12;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            // 
             // VtnCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 674);
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblCatalogo);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCodigo);
@@ -193,6 +209,8 @@ namespace TP1_WinForms
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCatalogo;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }
 

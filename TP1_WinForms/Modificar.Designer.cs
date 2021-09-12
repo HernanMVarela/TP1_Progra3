@@ -29,34 +29,33 @@ namespace TP1_WinForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmbBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // cmbBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(311, 214);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.cmbBox.FormattingEnabled = true;
+            this.cmbBox.Location = new System.Drawing.Point(186, 117);
+            this.cmbBox.Name = "cmbBox";
+            this.cmbBox.Size = new System.Drawing.Size(121, 24);
+            this.cmbBox.TabIndex = 0;
             // 
-            // DescripcionArt
+            // Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 456);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "DescripcionArt";
-            this.Text = "DescripcionArt";
+            this.Controls.Add(this.cmbBox);
+            this.Name = "Modificar";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "Modificar";
             this.Load += new System.EventHandler(this.DescripcionArt_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cmbBox;
     }
 }
