@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+using System.Windows.Forms;
 namespace Servicio
 {
     public class AccesoDB
@@ -35,6 +35,21 @@ namespace Servicio
             comando.Connection = conexion;
             conexion.Open();
             lector = comando.ExecuteReader();
+        }
+
+        public void EjecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
         }
 
         public void CerrarConexion()

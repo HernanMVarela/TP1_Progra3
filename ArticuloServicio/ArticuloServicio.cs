@@ -53,5 +53,23 @@ namespace Servicio
             }
         }
 
+        public void AgregarDB()
+        {
+            AccesoDB datos = new AccesoDB();
+
+            try
+            {
+                datos.SetearComando("");
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+
+        }
+
     }
 }
