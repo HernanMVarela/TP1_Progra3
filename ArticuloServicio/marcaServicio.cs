@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Servicio
 {
-    class marcaServicio
+    public class marcaServicio
     {
         public List<marca> listaMarcas()
         {

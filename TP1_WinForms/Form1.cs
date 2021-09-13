@@ -50,5 +50,11 @@ namespace TP1_WinForms
                 pbxFoto.Load("https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-no-image-available-icon-flat.jpg");
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Agregar agregar = new Agregar();
+            agregar.ShowDialog();
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Servicio
 {
-    class categoriaServicio
+    public class categoriaServicio
     {
         public List<categoria> listaCategorias()
         {
@@ -17,15 +17,15 @@ namespace Servicio
 
             try
             {
-                datos.SetearComando("select Id, Descripcion from CATEGORIA");
+                datos.SetearComando("select Id, Descripcion as Categoria from CATEGORIAS");
                 datos.LecturaDB();
                 while (datos.Lector.Read())
                 {
                     categoria aux = new categoria();
                     aux.Id = (int)datos.Lector["Id"];
 
-                    // if (!(datos.Lector["Descripcion"] is DBNull))
-                        aux.Nombre = (string)datos.Lector["Descripcion"];
+                    if (!(datos.Lector["Categoria"] is DBNull))
+                        aux.Nombre = (string)datos.Lector["Categoria"];
                     listaCategorias.Add(aux);
                 }
 
