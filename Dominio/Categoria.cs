@@ -10,9 +10,12 @@ namespace Dominio
     {
         public string Nombre
         { get; set; }
+        public int Id
+        { get; set; }
         public categoria()
         {
             Nombre = "Sin Categoria";
+            Id = 0;
         }
 
         public override string ToString()
