@@ -30,7 +30,6 @@ namespace TP1_WinForms
         private void InitializeComponent()
         {
             this.dgvTabla = new System.Windows.Forms.DataGridView();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnDescripcion = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pbxFoto = new System.Windows.Forms.PictureBox();
@@ -42,6 +41,7 @@ namespace TP1_WinForms
             this.lblCatalogo = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).BeginInit();
             this.SuspendLayout();
@@ -50,28 +50,17 @@ namespace TP1_WinForms
             // 
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabla.Location = new System.Drawing.Point(9, 88);
-            this.dgvTabla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTabla.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
             this.dgvTabla.RowTemplate.Height = 24;
             this.dgvTabla.Size = new System.Drawing.Size(362, 398);
             this.dgvTabla.TabIndex = 0;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(142, 500);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(97, 37);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnDescripcion_Click);
-            // 
             // btnDescripcion
             // 
             this.btnDescripcion.Location = new System.Drawing.Point(544, 500);
-            this.btnDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.btnDescripcion.Name = "btnDescripcion";
             this.btnDescripcion.Size = new System.Drawing.Size(146, 37);
             this.btnDescripcion.TabIndex = 2;
@@ -92,7 +81,7 @@ namespace TP1_WinForms
             // pbxFoto
             // 
             this.pbxFoto.Location = new System.Drawing.Point(461, 132);
-            this.pbxFoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxFoto.Margin = new System.Windows.Forms.Padding(2);
             this.pbxFoto.Name = "pbxFoto";
             this.pbxFoto.Size = new System.Drawing.Size(318, 262);
             this.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -163,7 +152,7 @@ namespace TP1_WinForms
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(25, 500);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(97, 37);
             this.btnAgregar.TabIndex = 11;
@@ -174,18 +163,29 @@ namespace TP1_WinForms
             // btnBorrar
             // 
             this.btnBorrar.Location = new System.Drawing.Point(257, 500);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(97, 37);
             this.btnBorrar.TabIndex = 12;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(141, 500);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(97, 37);
+            this.btnModificar.TabIndex = 13;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
             // VtnCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 548);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblCatalogo);
@@ -197,7 +197,6 @@ namespace TP1_WinForms
             this.Controls.Add(this.pbxFoto);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnDescripcion);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgvTabla);
             this.Name = "VtnCatalogo";
             this.Text = "Catalogo";
@@ -212,7 +211,6 @@ namespace TP1_WinForms
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTabla;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnDescripcion;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.PictureBox pbxFoto;
@@ -224,6 +222,7 @@ namespace TP1_WinForms
         private System.Windows.Forms.Label lblCatalogo;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

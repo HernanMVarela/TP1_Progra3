@@ -53,13 +53,13 @@ namespace Servicio
             }
         }
 
-        public void AgregarDB()
+        public void AgregarDB(Articulo nuevo)
         {
             AccesoDB datos = new AccesoDB();
 
             try
             {
-                datos.SetearComando("");
+                datos.SetearComando("insert into Articulos (Codigo, Nombre, Descripcion, idMarca, IdCategoria, ImagenUrl, Precio) values ('" + nuevo.Codigo +"','" + nuevo.Nombre + "','"+ nuevo.Descripcion + "'," + nuevo.Marca.Id + "," + nuevo.Categoria.Id + ",'" + nuevo.ImagenURL + "'," + nuevo.Precio +");");
                 datos.EjecutarAccion();
 
             }
