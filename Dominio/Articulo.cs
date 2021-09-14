@@ -22,7 +22,7 @@ namespace Dominio
         { get; set; }
         public string ImagenURL
         { get; set; }
-        public string Precio
+        public decimal Precio
         { get; set; }
     }
 }

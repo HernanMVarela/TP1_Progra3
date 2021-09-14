@@ -50,5 +50,13 @@ namespace TP1_WinForms
             Agregar agregar = new Agregar();
             agregar.ShowDialog();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo auxAgregar = new Articulo();
+            auxAgregar = (Articulo)dgvTabla.CurrentRow.DataBoundItem;
+            Agregar agregar = new Agregar(auxAgregar);
+            agregar.ShowDialog();
+        }
     }
 }

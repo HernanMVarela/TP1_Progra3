@@ -19,15 +19,15 @@ namespace Servicio
 
             try
             {
-                datos.SetearComando("select Id, Descripcion as Marca from MARCAS");
+                datos.SetearComando("select Id, Descripcion from MARCAS");
                 datos.LecturaDB();
                 while (datos.Lector.Read())
                 {
                     marca aux = new marca();
                     aux.Id = (int)datos.Lector["Id"];
 
-                    if (!(datos.Lector["Marca"] is DBNull))
-                    aux.Nombre = (string)datos.Lector["Marca"];
+                    if (!(datos.Lector["Descripcion"] is DBNull))
+                    aux.Nombre = (string)datos.Lector["Descripcion"];
                     listaMarcas.Add(aux);
                 }
                 

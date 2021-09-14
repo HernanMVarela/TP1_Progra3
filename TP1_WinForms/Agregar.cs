@@ -15,9 +15,18 @@ namespace TP1_WinForms
 {
     public partial class Agregar : Form
     {
+
+        private Articulo auxArt = new Articulo();
         public Agregar()
         {
             InitializeComponent();
+            auxArt = null;
+        }
+
+        public Agregar(Articulo aux)
+        {
+            InitializeComponent();
+            auxArt = aux;
         }
 
         private void DescripcionArt_Load(object sender, EventArgs e)
@@ -27,7 +36,23 @@ namespace TP1_WinForms
             try
             {
                 cmbMarca.DataSource = serviceMarca.listaMarcas();
+                cmbMarca.ValueMember = "Id";
+                cmbMarca.DisplayMember = "Nombre";
+
                 cmbCategoria.DataSource = serviceCategoria.listaCategorias();
+                cmbCategoria.ValueMember = "Id";
+                cmbCategoria.DisplayMember = "Nombre";
+
+                if (auxArt!=null)
+                {
+                    txbCodigo.Text = auxArt.Codigo;
+                    txbDescripcion.Text = auxArt.Descripcion;
+                    txbNombre.Text = auxArt.Nombre;
+                    txtURLImagen.Text = auxArt.ImagenURL;
+                    txtPrecio.Text = auxArt.Precio.ToString();
+                    cmbMarca.SelectedValue = auxArt.Marca.Id;
+                    cmbCategoria.SelectedValue = auxArt.Categoria.Id;
+                } 
                 cargar_imagen(txtURLImagen.Text);
             }
             catch (Exception ex)
@@ -79,21 +104,28 @@ namespace TP1_WinForms
                 txbCodigo.BackColor = System.Drawing.SystemColors.Control;
             if (txbCodigo.Text != "" && txbNombre.Text != "")
             {
-                Articulo nuevo = new Articulo();
                 ArticuloServicio newServicio = new ArticuloServicio();
                 try
                 {
-                    nuevo.Nombre = txbNombre.Text;
-                    nuevo.Descripcion = txbDescripcion.Text;
-                    nuevo.Codigo = txbCodigo.Text;
-                    nuevo.Categoria = (categoria)cmbCategoria.SelectedItem;
-                    nuevo.Marca = (marca)cmbMarca.SelectedItem;
-                    nuevo.ImagenURL = txtURLImagen.Text;
-                    nuevo.Precio = txtPrecio.Text;
+                    auxArt.Nombre = txbNombre.Text;
+                    auxArt.Descripcion = txbDescripcion.Text;
+                    auxArt.Codigo = txbCodigo.Text;
+                    auxArt.Categoria = (categoria)cmbCategoria.SelectedItem;
+                    auxArt.Marca = (marca)cmbMarca.SelectedItem;
+                    auxArt.ImagenURL = txtURLImagen.Text;
+                    auxArt.Precio = decimal.Parse(txtPrecio.Text);
 
-                    newServicio.AgregarDB(nuevo);
-                    MessageBox.Show("Articulo agregado!");
-                    Close();
+                    if (auxArt.Id != 0)
+                    {
+                        newServicio.ModificarDB(auxArt);
+                        MessageBox.Show("Artículo Modificado");
+                    }
+                    else
+                    {
+                        newServicio.AgregarDB(auxArt);
+                        MessageBox.Show("Articulo agregado!");
+                    }
+                        Close();
                 }
                 catch (Exception ex)
                 {

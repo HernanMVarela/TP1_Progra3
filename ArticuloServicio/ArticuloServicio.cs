@@ -18,7 +18,7 @@ namespace Servicio
 
             try
             {
-                datos.SetearComando("select A.id, A.Codigo, A.Nombre, A.Descripcion, coalesce(M.Descripcion,'Sin Marca') as Marca, coalesce(C.Descripcion,'Sin categoria') as Categoria, A.ImagenUrl as Imagen, A.Precio from ARTICULOS A left join MARCAS M on M.Id = A.IdMarca left join CATEGORIAS C on C.Id = A.IdCategoria");
+                datos.SetearComando("select A.id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, A.ImagenUrl as Imagen, A.Precio, M.Id as IdMarca, C.Id as IdCategoria from ARTICULOS A left join MARCAS M on M.Id = A.IdMarca left join CATEGORIAS C on C.Id = A.IdCategoria");
                 datos.LecturaDB();
 
                 while (datos.Lector.Read())
@@ -27,15 +27,32 @@ namespace Servicio
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    aux.Marca = new marca();
-                    aux.Categoria = new categoria();
-                    aux.Marca.Nombre = (string)datos.Lector["Marca"];
-                    aux.Categoria.Nombre = (string)datos.Lector["Categoria"];
+                    if (!(datos.Lector["Descripcion"] is DBNull))
+                    {
+                        aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    }
+                    if (!(datos.Lector["Marca"] is DBNull))
+                    {
+                        aux.Marca = new marca();
+                        aux.Marca.Nombre = (string)datos.Lector["Marca"];
+                        aux.Marca.Id = (int)datos.Lector["idMarca"];
+                    }
+                    if (!(datos.Lector["Categoria"] is DBNull))
+                    {
+                        aux.Categoria = new categoria();
+                        aux.Categoria.Nombre = (string)datos.Lector["Categoria"];
+                        aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    }
+                    
+                    if (!(datos.Lector["Precio"] is DBNull))
+                    {
+                        decimal p = (decimal)datos.Lector["Precio"];
+                        decimal pr = Math.Round(p, 2);
+                        aux.Precio = pr;
+                    }
+                    
                     aux.ImagenURL = (string)datos.Lector["Imagen"];
-                    decimal p =(decimal)datos.Lector["Precio"];
-                    decimal pr = Math.Round(p, 2);
-                    aux.Precio = "$ " + pr.ToString();
+                    
 
                     lista.Add(aux);
                 }
@@ -68,6 +85,27 @@ namespace Servicio
                 MessageBox.Show(ex.ToString());
                 throw ex;
             }
+
+        }
+
+        public void ModificarDB(Articulo modify)
+        {
+            AccesoDB datos = new AccesoDB();
+
+            try
+            {
+                datos.SetearComando("update Articulos set Codigo="+modify.Codigo+", Nombre='"+modify.Nombre+"', Descripcion='"+modify.Descripcion+"', idMarca="+modify.Marca.Id+", IdCategoria="+modify.Categoria.Id+", ImagenUrl='"+modify.ImagenURL+"', Precio="+modify.Precio+"where Id="+modify.Id);
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+
+
 
         }
 
