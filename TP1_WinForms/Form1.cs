@@ -2,6 +2,7 @@
 using Servicio;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TP1_WinForms
@@ -34,22 +35,27 @@ namespace TP1_WinForms
 
         private void btnDescripcion_Click_1(object sender, EventArgs e)
         {
-            Articulo ArtDesc = (Articulo)dgvTabla.CurrentRow.DataBoundItem;
-            lblCategoria.Text = "Categoria: " + ArtDesc.Categoria.Nombre;
-            lblTitulo.Text = ArtDesc.Nombre;
-            lblCodigo.Text = ArtDesc.Codigo;
-            lblMarca.Text = "Marca: " + ArtDesc.Marca.Nombre;
-            lblDescripcion.Text = "Descripcion: " + ArtDesc.Descripcion;
-            lblPrecio.Text = "Precio: " + ArtDesc.Precio;
-            try
+            if (dgvTabla.RowCount>0)
             {
-                pbxFoto.Load(ArtDesc.ImagenURL);
-            }
-            catch (Exception)
-            {
-                pbxFoto.Load("https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-no-image-available-icon-flat.jpg");
+                Articulo ArtDesc = (Articulo)dgvTabla.CurrentRow.DataBoundItem;
+                lblCategoria.Text = "Categoria: " + ArtDesc.Categoria.Nombre;
+                lblTitulo.Text = ArtDesc.Nombre;
+                lblCodigo.Text = ArtDesc.Codigo;
+                lblMarca.Text = "Marca: " + ArtDesc.Marca.Nombre;
+                lblDescripcion.Text = "Descripcion: " + ArtDesc.Descripcion;
+                lblPrecio.Text = "Precio: " + ArtDesc.Precio;
+            
+                try
+                {
+                    pbxFoto.Load(ArtDesc.ImagenURL);
+                }
+                catch (Exception)
+                {
+                    pbxFoto.Load("https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-no-image-available-icon-flat.jpg");
+                }
             }
         }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Agregar agregar = new Agregar();
@@ -68,7 +74,26 @@ namespace TP1_WinForms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            if (cbxBuscar.Text == "")
+                btnBuscar.BackColor = Color.Red;
+            else {
+                cbxBuscar.BackColor = SystemColors.Control;
+                List<Articulo> aux = new List<Articulo>();
+                for (int i = 0; i < listaArticulos.Count; i++)
+                {
+                    Articulo A = listaArticulos[i];
+                    if (!(A.Codigo is null) && A.Codigo == txbBuscar.Text && cbxBuscar.Text == "Código")
+                        aux.Add(A);
+                    if (!(A.Nombre is null) && A.Nombre == txbBuscar.Text && cbxBuscar.Text == "Nombre")
+                        aux.Add(A);
+                    if (!(A.Marca is null) && A.Marca.Nombre == txbBuscar.Text && cbxBuscar.Text == "Marca")
+                        aux.Add(A);
+                    if (!(A.Categoria is null) && A.Categoria.Nombre == txbBuscar.Text && cbxBuscar.Text == "Categoria")
+                        aux.Add(A);
+                }
+                if (txbBuscar.Text == "") dgvTabla.DataSource = listaArticulos;
+                else dgvTabla.DataSource = aux;
+            }
         }
     }
 }
