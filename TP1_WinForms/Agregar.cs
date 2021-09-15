@@ -50,8 +50,11 @@ namespace TP1_WinForms
                     txbNombre.Text = auxArt.Nombre;
                     txtURLImagen.Text = auxArt.ImagenURL;
                     txtPrecio.Text = auxArt.Precio.ToString();
-                    cmbMarca.SelectedValue = auxArt.Marca.Id;
-                    cmbCategoria.SelectedValue = auxArt.Categoria.Id;
+                    if (!(auxArt.Marca is null)) 
+                        cmbMarca.SelectedValue = auxArt.Marca.Id;
+
+                    if (!(auxArt.Categoria is null))
+                        cmbCategoria.SelectedValue = auxArt.Categoria.Id;
                 } 
                 cargar_imagen(txtURLImagen.Text);
             }

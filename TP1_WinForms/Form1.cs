@@ -95,5 +95,12 @@ namespace TP1_WinForms
                 else dgvTabla.DataSource = aux;
             }
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            ArticuloServicio borrar = new ArticuloServicio();
+            borrar.BorrarDB((Articulo)dgvTabla.CurrentRow.DataBoundItem);
+            cargar_datos();
+        }
     }
 }

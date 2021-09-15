@@ -109,5 +109,24 @@ namespace Servicio
 
         }
 
+        public void BorrarDB(Articulo borrarArt)
+        {
+            AccesoDB datos = new AccesoDB();
+
+            try
+            {
+                datos.SetearComando("delete from ARTICULOS where ID = " + borrarArt.Id);
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+
+        }
+
     }
 }
