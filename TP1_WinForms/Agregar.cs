@@ -55,7 +55,11 @@ namespace TP1_WinForms
 
                     if (!(auxArt.Categoria is null))
                         cmbCategoria.SelectedValue = auxArt.Categoria.Id;
-                } 
+                }
+                else
+                {
+                    auxArt = new Articulo();
+                }
                 cargar_imagen(txtURLImagen.Text);
             }
             catch (Exception ex)
@@ -116,7 +120,10 @@ namespace TP1_WinForms
                     auxArt.Categoria = (categoria)cmbCategoria.SelectedItem;
                     auxArt.Marca = (marca)cmbMarca.SelectedItem;
                     auxArt.ImagenURL = txtURLImagen.Text;
-                    auxArt.Precio = decimal.Parse(txtPrecio.Text);
+                    if (txtPrecio.Text != "")
+                    {
+                        auxArt.Precio = decimal.Parse(txtPrecio.Text);
+                    }
 
                     if (auxArt.Id != 0)
                     {

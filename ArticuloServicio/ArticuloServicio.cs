@@ -104,9 +104,6 @@ namespace Servicio
                 MessageBox.Show(ex.ToString());
                 throw ex;
             }
-
-
-
         }
 
         public void BorrarDB(Articulo borrarArt)

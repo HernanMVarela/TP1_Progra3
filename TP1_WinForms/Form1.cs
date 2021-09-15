@@ -38,12 +38,42 @@ namespace TP1_WinForms
             if (dgvTabla.RowCount>0)
             {
                 Articulo ArtDesc = (Articulo)dgvTabla.CurrentRow.DataBoundItem;
-                lblCategoria.Text = "Categoria: " + ArtDesc.Categoria.Nombre;
                 lblTitulo.Text = ArtDesc.Nombre;
                 lblCodigo.Text = ArtDesc.Codigo;
-                lblMarca.Text = "Marca: " + ArtDesc.Marca.Nombre;
-                lblDescripcion.Text = "Descripcion: " + ArtDesc.Descripcion;
-                lblPrecio.Text = "Precio: " + ArtDesc.Precio;
+                if (ArtDesc.Marca is null)
+                {
+                    lblMarca.Text = "Marca: Sin marca";
+                }
+                else
+                {
+                    lblMarca.Text = "Marca: " + ArtDesc.Marca.Nombre;
+                }
+                    
+                if (ArtDesc.Categoria is null)
+                {
+                    lblCategoria.Text = "Categoria: Sin categoría";
+                }
+                else
+                {
+                    lblCategoria.Text = "Categoría: " + ArtDesc.Categoria.Nombre;
+                }
+                if (ArtDesc.Descripcion is null)
+                {
+                    lblDescripcion.Text = "Descripción: " + ArtDesc.Descripcion;
+                }
+                else
+                {
+                    lblDescripcion.Text = "Descripción: Sin descripción";
+                }
+                if (ArtDesc.Precio < 0)
+                {
+                    lblPrecio.Text = "Precio: " + ArtDesc.Precio;
+                }
+                else
+                {
+                    lblPrecio.Text = "Precio: Sin precio";
+                }
+                
             
                 try
                 {
@@ -98,8 +128,9 @@ namespace TP1_WinForms
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            ArticuloServicio borrar = new ArticuloServicio();
-            borrar.BorrarDB((Articulo)dgvTabla.CurrentRow.DataBoundItem);
+            Articulo borrado = (Articulo)dgvTabla.CurrentRow.DataBoundItem;
+            Confirmar vtnConfirmar = new Confirmar(borrado);
+            vtnConfirmar.ShowDialog();
             cargar_datos();
         }
     }
