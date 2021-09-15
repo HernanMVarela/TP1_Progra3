@@ -42,6 +42,11 @@ namespace TP1_WinForms
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txbBuscar = new System.Windows.Forms.TextBox();
+            this.cbxBuscar = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).BeginInit();
             this.SuspendLayout();
@@ -49,13 +54,15 @@ namespace TP1_WinForms
             // dgvTabla
             // 
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabla.Location = new System.Drawing.Point(12, 108);
+            this.dgvTabla.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvTabla.Location = new System.Drawing.Point(12, 162);
             this.dgvTabla.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
             this.dgvTabla.RowTemplate.Height = 24;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTabla.Size = new System.Drawing.Size(483, 490);
+            this.dgvTabla.Size = new System.Drawing.Size(483, 436);
             this.dgvTabla.TabIndex = 0;
             // 
             // btnDescripcion
@@ -64,7 +71,7 @@ namespace TP1_WinForms
             this.btnDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDescripcion.Name = "btnDescripcion";
             this.btnDescripcion.Size = new System.Drawing.Size(195, 46);
-            this.btnDescripcion.TabIndex = 2;
+            this.btnDescripcion.TabIndex = 0;
             this.btnDescripcion.Text = "Ver Descripcion";
             this.btnDescripcion.UseVisualStyleBackColor = true;
             this.btnDescripcion.Click += new System.EventHandler(this.btnDescripcion_Click_1);
@@ -149,7 +156,7 @@ namespace TP1_WinForms
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(129, 46);
-            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -160,7 +167,7 @@ namespace TP1_WinForms
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(129, 46);
-            this.btnBorrar.TabIndex = 12;
+            this.btnBorrar.TabIndex = 3;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             // 
@@ -170,16 +177,70 @@ namespace TP1_WinForms
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(129, 46);
-            this.btnModificar.TabIndex = 13;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(410, 114);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(85, 34);
+            this.btnBuscar.TabIndex = 11;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txbBuscar
+            // 
+            this.txbBuscar.Location = new System.Drawing.Point(89, 120);
+            this.txbBuscar.Name = "txbBuscar";
+            this.txbBuscar.Size = new System.Drawing.Size(142, 22);
+            this.txbBuscar.TabIndex = 12;
+            // 
+            // cbxBuscar
+            // 
+            this.cbxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxBuscar.FormattingEnabled = true;
+            this.cbxBuscar.Items.AddRange(new object[] {
+            "Código",
+            "Nombre",
+            "Marca",
+            "Categoria"});
+            this.cbxBuscar.Location = new System.Drawing.Point(267, 120);
+            this.cbxBuscar.Name = "cbxBuscar";
+            this.cbxBuscar.Size = new System.Drawing.Size(121, 24);
+            this.cbxBuscar.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Buscar";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(237, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "en";
             // 
             // VtnCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 674);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbxBuscar);
+            this.Controls.Add(this.txbBuscar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAgregar);
@@ -219,6 +280,11 @@ namespace TP1_WinForms
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txbBuscar;
+        private System.Windows.Forms.ComboBox cbxBuscar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

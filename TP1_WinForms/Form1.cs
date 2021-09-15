@@ -16,6 +16,11 @@ namespace TP1_WinForms
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cargar_datos();
+        }
+
+        private void cargar_datos()
+        {
             ArticuloServicio service = new ArticuloServicio();
             listaArticulos = service.listar();
             dgvTabla.DataSource = listaArticulos;
@@ -49,6 +54,7 @@ namespace TP1_WinForms
         {
             Agregar agregar = new Agregar();
             agregar.ShowDialog();
+            cargar_datos();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -57,6 +63,12 @@ namespace TP1_WinForms
             auxAgregar = (Articulo)dgvTabla.CurrentRow.DataBoundItem;
             Agregar agregar = new Agregar(auxAgregar);
             agregar.ShowDialog();
+            cargar_datos();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
