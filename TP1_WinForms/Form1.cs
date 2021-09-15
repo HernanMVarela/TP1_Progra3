@@ -57,7 +57,7 @@ namespace TP1_WinForms
                 {
                     lblCategoria.Text = "Categoría: " + ArtDesc.Categoria.Nombre;
                 }
-                if (ArtDesc.Descripcion is null)
+                if (!(ArtDesc.Descripcion is null))
                 {
                     lblDescripcion.Text = "Descripción: " + ArtDesc.Descripcion;
                 }
@@ -65,7 +65,7 @@ namespace TP1_WinForms
                 {
                     lblDescripcion.Text = "Descripción: Sin descripción";
                 }
-                if (ArtDesc.Precio < 0)
+                if (!(ArtDesc.Precio < 0))
                 {
                     lblPrecio.Text = "Precio: " + ArtDesc.Precio;
                 }
