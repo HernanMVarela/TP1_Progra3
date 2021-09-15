@@ -94,7 +94,7 @@ namespace Servicio
 
             try
             {
-                datos.SetearComando("update Articulos set Codigo="+modify.Codigo+", Nombre='"+modify.Nombre+"', Descripcion='"+modify.Descripcion+"', idMarca="+modify.Marca.Id+", IdCategoria="+modify.Categoria.Id+", ImagenUrl='"+modify.ImagenURL+"', Precio="+modify.Precio+"where Id="+modify.Id);
+                datos.SetearComando("update Articulos set Codigo='"+modify.Codigo+"', Nombre='"+modify.Nombre+"', Descripcion='"+modify.Descripcion+"', idMarca="+modify.Marca.Id+", IdCategoria="+modify.Categoria.Id+", ImagenUrl='"+modify.ImagenURL+"', Precio="+(float)modify.Precio+"where Id="+modify.Id);
                 datos.EjecutarAccion();
 
             }

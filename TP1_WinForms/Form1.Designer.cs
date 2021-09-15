@@ -54,6 +54,7 @@ namespace TP1_WinForms
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
             this.dgvTabla.RowTemplate.Height = 24;
+            this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTabla.Size = new System.Drawing.Size(483, 490);
             this.dgvTabla.TabIndex = 0;
             // 
@@ -192,7 +193,7 @@ namespace TP1_WinForms
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnDescripcion);
             this.Controls.Add(this.dgvTabla);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VtnCatalogo";
             this.Text = "Catalogo";
             this.Load += new System.EventHandler(this.Form1_Load);
