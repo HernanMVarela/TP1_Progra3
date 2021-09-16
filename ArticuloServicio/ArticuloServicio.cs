@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 
-
 namespace Servicio
 {
     public class ArticuloServicio
@@ -43,19 +42,13 @@ namespace Servicio
                         aux.Categoria.Nombre = (string)datos.Lector["Categoria"];
                         aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
                     }
-                    
                     if (!(datos.Lector["Precio"] is DBNull))
                     {
-                        decimal p = (decimal)datos.Lector["Precio"];
-                        decimal pr = Math.Round(p, 2);
-                        aux.Precio = pr;
+                        aux.Precio = Math.Round((decimal)datos.Lector["Precio"], 2);
                     }
-                    
                     aux.ImagenURL = (string)datos.Lector["Imagen"];
-
                     lista.Add(aux);
                 }
-
                 return lista;
             }
             catch (Exception ex)
@@ -77,7 +70,6 @@ namespace Servicio
             {
                 datos.SetearComando("insert into Articulos (Codigo, Nombre, Descripcion, idMarca, IdCategoria, ImagenUrl, Precio) values ('" + nuevo.Codigo +"','" + nuevo.Nombre + "','"+ nuevo.Descripcion + "'," + nuevo.Marca.Id + "," + nuevo.Categoria.Id + ",'" + nuevo.ImagenURL + "'," + nuevo.Precio +");");
                 datos.EjecutarAccion();
-
             }
             catch (Exception ex)
             {

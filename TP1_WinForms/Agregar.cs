@@ -163,7 +163,6 @@ namespace TP1_WinForms
             cmbMarca.DataSource = serviceCategoria.listaCategorias();
             cmbMarca.ValueMember = "Id";
             cmbMarca.DisplayMember = "Nombre";
-
         }
     }
 }
