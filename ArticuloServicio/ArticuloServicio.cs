@@ -68,7 +68,14 @@ namespace Servicio
 
             try
             {
-                datos.SetearComando("insert into Articulos (Codigo, Nombre, Descripcion, idMarca, IdCategoria, ImagenUrl, Precio) values ('" + nuevo.Codigo +"','" + nuevo.Nombre + "','"+ nuevo.Descripcion + "'," + nuevo.Marca.Id + "," + nuevo.Categoria.Id + ",'" + nuevo.ImagenURL + "'," + nuevo.Precio +");");
+                datos.SetearComando("insert into Articulos (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @ImagenUrl, @Precio)");
+                datos.setearParametros("@Codigo", nuevo.Codigo);
+                datos.setearParametros("@Nombre", nuevo.Nombre);
+                datos.setearParametros("@Descripcion", nuevo.Descripcion);
+                datos.setearParametros("@idMarca", nuevo.Marca.Id);
+                datos.setearParametros("@idCategoria", nuevo.Categoria.Id);
+                datos.setearParametros("@ImagenUrl", nuevo.ImagenURL);
+                datos.setearParametros("@Precio", nuevo.Precio);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -85,7 +92,15 @@ namespace Servicio
 
             try
             {
-                datos.SetearComando("update Articulos set Codigo='"+modify.Codigo+"', Nombre='"+modify.Nombre+"', Descripcion='"+modify.Descripcion+"', idMarca="+modify.Marca.Id+", IdCategoria="+modify.Categoria.Id+", ImagenUrl='"+modify.ImagenURL+"', Precio="+(float)modify.Precio+"where Id="+modify.Id);
+                datos.SetearComando("update Articulos set Codigo=@Codigo, Nombre=@Nombre, Descripcion=@Descripcion, IdMarca=@idMarca, IdCategoria=@idCategoria, ImagenUrl=@ImagenUrl, Precio=@precio where Id=@Id");
+                datos.setearParametros("@Codigo", modify.Codigo);
+                datos.setearParametros("@Nombre", modify.Nombre);
+                datos.setearParametros("@Descripcion", modify.Descripcion);
+                datos.setearParametros("@idMarca", modify.Marca.Id);
+                datos.setearParametros("@idCategoria", modify.Categoria.Id);
+                datos.setearParametros("@ImagenUrl", modify.ImagenURL);
+                datos.setearParametros("@Precio", modify.Precio);
+                datos.setearParametros("@Id", modify.Id);
                 datos.EjecutarAccion();
 
             }

@@ -48,7 +48,8 @@ namespace Servicio
 
             try
             {
-                datos.SetearComando("insert into MARCAS (Descripcion) values ('"+nueva.Nombre+"')");
+                datos.SetearComando("insert into MARCAS (Descripcion) values (@Descripcion)");
+                datos.setearParametros("@Descripcion", nueva.Nombre);
                 datos.EjecutarAccion();
 
             }

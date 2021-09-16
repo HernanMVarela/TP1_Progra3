@@ -46,7 +46,8 @@ namespace Servicio
 
             try
             {
-                datos.SetearComando("insert into CATEGORIAS (Descripcion) values ('" + nueva.Nombre + "')");
+                datos.SetearComando("insert into CATEGORIAS (Descripcion) values (@Descripcion)");
+                datos.setearParametros("@Descripcion", nueva.Nombre);
                 datos.EjecutarAccion();
 
             }

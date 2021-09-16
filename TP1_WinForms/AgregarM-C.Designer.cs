@@ -38,18 +38,20 @@ namespace TP1_WinForms
             // 
             // txbNueva
             // 
-            this.txbNueva.Location = new System.Drawing.Point(186, 115);
+            this.txbNueva.Location = new System.Drawing.Point(164, 93);
+            this.txbNueva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbNueva.MaxLength = 50;
             this.txbNueva.Name = "txbNueva";
-            this.txbNueva.Size = new System.Drawing.Size(221, 22);
+            this.txbNueva.Size = new System.Drawing.Size(143, 20);
             this.txbNueva.TabIndex = 0;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(56, 118);
+            this.lblDescripcion.Location = new System.Drawing.Point(42, 96);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(46, 17);
+            this.lblDescripcion.Size = new System.Drawing.Size(41, 15);
             this.lblDescripcion.TabIndex = 1;
             this.lblDescripcion.Text = "label1";
             // 
@@ -57,7 +59,8 @@ namespace TP1_WinForms
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(112, 55);
+            this.lblTitulo.Location = new System.Drawing.Point(84, 45);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(62, 23);
             this.lblTitulo.TabIndex = 2;
@@ -65,9 +68,10 @@ namespace TP1_WinForms
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(59, 170);
+            this.btnAceptar.Location = new System.Drawing.Point(44, 138);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(128, 35);
+            this.btnAceptar.Size = new System.Drawing.Size(96, 28);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -75,9 +79,10 @@ namespace TP1_WinForms
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(279, 170);
+            this.btnCancelar.Location = new System.Drawing.Point(209, 138);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(128, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(96, 28);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -85,14 +90,15 @@ namespace TP1_WinForms
             // 
             // AgregarM_C
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 217);
+            this.ClientSize = new System.Drawing.Size(358, 176);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txbNueva);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AgregarM_C";
             this.Text = "Agregar";
             this.Load += new System.EventHandler(this.AgregarM_C_Load);

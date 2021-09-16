@@ -57,5 +57,10 @@ namespace Servicio
             if (lector != null) lector.Close();
             conexion.Close();
         }
+
+        public void setearParametros (string tipo, object valor)
+        {
+            comando.Parameters.AddWithValue(tipo, valor);
+        }
     }
 }
