@@ -41,7 +41,22 @@ namespace Servicio
                 throw ex;
             }
 
-            
+        }
+        public void AgregarMDB(marca nueva)
+        {
+            AccesoDB datos = new AccesoDB();
+
+            try
+            {
+                datos.SetearComando("insert into MARCAS (Descripcion) values ('"+nueva.Nombre+"')");
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
         }
 
     }

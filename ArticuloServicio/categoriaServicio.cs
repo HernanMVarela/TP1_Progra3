@@ -39,8 +39,23 @@ namespace Servicio
                 throw ex;
             }
         }
-    
-    
-    
+
+        public void AgregarMDB(categoria nueva)
+        {
+            AccesoDB datos = new AccesoDB();
+
+            try
+            {
+                datos.SetearComando("insert into CATEGORIAS (Descripcion) values ('" + nueva.Nombre + "')");
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+        }
+
     }
 }

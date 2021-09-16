@@ -46,6 +46,8 @@ namespace TP1_WinForms
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAgregarMarca = new System.Windows.Forms.Button();
+            this.btnAgregarCat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@ namespace TP1_WinForms
             this.cmbMarca.Location = new System.Drawing.Point(139, 204);
             this.cmbMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(248, 24);
+            this.cmbMarca.Size = new System.Drawing.Size(235, 24);
             this.cmbMarca.TabIndex = 3;
             // 
             // lblMarca
@@ -88,7 +90,7 @@ namespace TP1_WinForms
             this.cmbCategoria.Location = new System.Drawing.Point(139, 250);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(248, 24);
+            this.cmbCategoria.Size = new System.Drawing.Size(235, 24);
             this.cmbCategoria.TabIndex = 4;
             // 
             // lblNombre
@@ -127,29 +129,29 @@ namespace TP1_WinForms
             // txbNombre
             // 
             this.txbNombre.Location = new System.Drawing.Point(139, 23);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txbNombre.MaxLength = 50;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(248, 22);
+            this.txbNombre.Size = new System.Drawing.Size(235, 22);
             this.txbNombre.TabIndex = 0;
             // 
             // txbDescripcion
             // 
             this.txbDescripcion.Location = new System.Drawing.Point(139, 68);
-            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txbDescripcion.MaxLength = 150;
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
-            this.txbDescripcion.Size = new System.Drawing.Size(248, 82);
+            this.txbDescripcion.Size = new System.Drawing.Size(235, 82);
             this.txbDescripcion.TabIndex = 1;
             // 
             // txbCodigo
             // 
             this.txbCodigo.Location = new System.Drawing.Point(139, 160);
-            this.txbCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txbCodigo.MaxLength = 50;
             this.txbCodigo.Name = "txbCodigo";
-            this.txbCodigo.Size = new System.Drawing.Size(248, 22);
+            this.txbCodigo.Size = new System.Drawing.Size(235, 22);
             this.txbCodigo.TabIndex = 2;
             // 
             // lblImagen
@@ -166,7 +168,7 @@ namespace TP1_WinForms
             // txtURLImagen
             // 
             this.txtURLImagen.Location = new System.Drawing.Point(139, 345);
-            this.txtURLImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtURLImagen.Margin = new System.Windows.Forms.Padding(4);
             this.txtURLImagen.MaxLength = 1000;
             this.txtURLImagen.Name = "txtURLImagen";
             this.txtURLImagen.Size = new System.Drawing.Size(621, 22);
@@ -176,7 +178,7 @@ namespace TP1_WinForms
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(152, 377);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(149, 34);
             this.btnAceptar.TabIndex = 7;
@@ -187,7 +189,7 @@ namespace TP1_WinForms
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(504, 377);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(149, 34);
             this.btnCancelar.TabIndex = 8;
@@ -198,7 +200,7 @@ namespace TP1_WinForms
             // pbxImagen
             // 
             this.pbxImagen.Location = new System.Drawing.Point(423, 23);
-            this.pbxImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxImagen.Margin = new System.Windows.Forms.Padding(4);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(339, 298);
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,10 +210,10 @@ namespace TP1_WinForms
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(139, 297);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.MaxLength = 8;
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(248, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(235, 22);
             this.txtPrecio.TabIndex = 5;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
@@ -226,11 +228,39 @@ namespace TP1_WinForms
             this.label1.TabIndex = 15;
             this.label1.Text = "Precio";
             // 
+            // btnAgregarMarca
+            // 
+            this.btnAgregarMarca.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarMarca.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAgregarMarca.Location = new System.Drawing.Point(380, 204);
+            this.btnAgregarMarca.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAgregarMarca.Name = "btnAgregarMarca";
+            this.btnAgregarMarca.Size = new System.Drawing.Size(29, 24);
+            this.btnAgregarMarca.TabIndex = 16;
+            this.btnAgregarMarca.Text = "+";
+            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
+            // 
+            // btnAgregarCat
+            // 
+            this.btnAgregarCat.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarCat.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAgregarCat.Location = new System.Drawing.Point(380, 250);
+            this.btnAgregarCat.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAgregarCat.Name = "btnAgregarCat";
+            this.btnAgregarCat.Size = new System.Drawing.Size(29, 24);
+            this.btnAgregarCat.TabIndex = 17;
+            this.btnAgregarCat.Text = "+";
+            this.btnAgregarCat.UseVisualStyleBackColor = true;
+            this.btnAgregarCat.Click += new System.EventHandler(this.btnAgregarCat_Click);
+            // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 426);
+            this.Controls.Add(this.btnAgregarCat);
+            this.Controls.Add(this.btnAgregarMarca);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbxImagen);
@@ -278,5 +308,7 @@ namespace TP1_WinForms
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAgregarMarca;
+        private System.Windows.Forms.Button btnAgregarCat;
     }
 }

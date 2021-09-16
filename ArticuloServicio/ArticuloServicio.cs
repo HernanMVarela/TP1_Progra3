@@ -52,7 +52,6 @@ namespace Servicio
                     }
                     
                     aux.ImagenURL = (string)datos.Lector["Imagen"];
-                    
 
                     lista.Add(aux);
                 }

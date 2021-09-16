@@ -144,5 +144,26 @@ namespace TP1_WinForms
                 }
             }
         }
+
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+            AgregarM_C vtnAgregarMC = new AgregarM_C("Marca");
+            vtnAgregarMC.ShowDialog();
+            marcaServicio serviceMarca = new marcaServicio();
+            cmbMarca.DataSource = serviceMarca.listaMarcas();
+            cmbMarca.ValueMember = "Id";
+            cmbMarca.DisplayMember = "Nombre";
+        }
+
+        private void btnAgregarCat_Click(object sender, EventArgs e)
+        {
+            AgregarM_C vtnAgregarMC = new AgregarM_C("Categoria");
+            vtnAgregarMC.ShowDialog();
+            categoriaServicio serviceCategoria = new categoriaServicio();
+            cmbMarca.DataSource = serviceCategoria.listaCategorias();
+            cmbMarca.ValueMember = "Id";
+            cmbMarca.DisplayMember = "Nombre";
+
+        }
     }
 }
