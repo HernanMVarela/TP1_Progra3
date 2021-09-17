@@ -160,9 +160,9 @@ namespace TP1_WinForms
             AgregarM_C vtnAgregarMC = new AgregarM_C("Categoria");
             vtnAgregarMC.ShowDialog();
             categoriaServicio serviceCategoria = new categoriaServicio();
-            cmbMarca.DataSource = serviceCategoria.listaCategorias();
-            cmbMarca.ValueMember = "Id";
-            cmbMarca.DisplayMember = "Nombre";
+            cmbCategoria.DataSource = serviceCategoria.listaCategorias();
+            cmbCategoria.ValueMember = "Id";
+            cmbCategoria.DisplayMember = "Nombre";
         }
     }
 }
